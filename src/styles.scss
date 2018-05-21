@@ -15,3 +15,6 @@ $theme-colors: (
 );
 
 @import '../node_modules/bootstrap/scss/bootstrap';
+html,body{
+  height: 100%;
+}

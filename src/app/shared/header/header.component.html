@@ -8,10 +8,10 @@
   <div class="collapse navbar-collapse" id="collapseExample" [ngbCollapse]="isCollapsed">
     <div class="navbar-nav flex-row ml-md-auto d-none d-flex">
       <div class="navbar-nav" *ngIf="isLoggedIn; else loggedOut">
-        <button class="btn btn-sm btn-outline-secondary mr-md-3" type="button">
+        <button (click)="gotoSignUp()" class="btn btn-sm btn-outline-secondary mr-md-3" type="button">
           <span>log<strong>in</strong></span>
         </button>
-        <button class="btn btn-sm btn-outline-secondary" type="button">
+        <button (click)="gotologIn()" class="btn btn-sm btn-outline-secondary" type="button">
           <span>Sign<strong>Up</strong></span>
         </button>
       </div>
