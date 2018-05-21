@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+$p-blue:#34495E;
+$p-light-blue:#2978A0;
+$p-orange:#FE7F2D;
+$p-green: #136F63;
+$p-red: #EC4067;
+$p-red2: #B9314F;
+
+$theme-colors: (
+  primary: $p-blue,
+  warrning:$p-orange,
+  success:$p-green,
+  danger: $p-red,
+  info: $p-light-blue
+);
+
+@import '../node_modules/bootstrap/scss/bootstrap';
