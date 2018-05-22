@@ -10,5 +10,25 @@ export const config = {
             path: 'signup',
             route: 'auth/signup'
         }
+    },
+    user:{
+        path: 'users',
+        route: 'users',
+        allUsers: {
+            path: 'all',
+            route: 'users/all'
+        },
+        viewUser: {
+            path: ':id',
+            route: 'users/'
+        },
+        addUser: {
+            path: 'add',
+            route: 'users/add'
+        },
+        editUser: {
+            path: 'edit/:id',
+            route: 'users/edit'
+        }
     }
 }
