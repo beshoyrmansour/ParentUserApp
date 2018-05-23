@@ -1,0 +1,39 @@
+$imgWidth:128;
+.circle-card{
+    margin-bottom: 15px;
+    text-align: center;
+    .heading {
+        border-radius: 100%;
+        margin: 0 auto -64px;
+        position: relative;
+        height: $imgWidth+px;
+            width: $imgWidth+px;
+        img{
+            height: $imgWidth+px;
+            width: $imgWidth+px;
+            transition: all 0.3s ease-in-out 0s;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+
+        }
+    }
+    .content {
+        border-radius: 10px;
+        padding-top: ($imgWidth/2)+px;;
+    }
+    
+    
+    .footer {
+        background-color: rgba(0, 0, 0, 0.1);
+        color: rgba(255, 255, 255, 0.5);
+        display: block;
+        padding: 5px;
+        transition: all 0.3s ease-in-out 0s;
+        border-radius: 10px;
+    }
+    .footer:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+        color: rgba(255, 255, 255, 0.5);
+        text-decoration: none;
+    }
+}

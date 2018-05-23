@@ -1,3 +1,5 @@
+
+
 export const config = {
     auth: {
         path: 'auth',
@@ -31,4 +33,7 @@ export const config = {
             route: 'users/edit'
         }
     }
+}
+export const constants={
+    deleteSuccessResponseStatus:204
 }

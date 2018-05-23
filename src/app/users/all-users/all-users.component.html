@@ -1,4 +1,15 @@
-<p>
-  all-users works!
-</p>
-<bpu-user-card></bpu-user-card>
+<div class="col-12">
+  <button *ngIf="page < total_pages" type="button" (click)="loadUsersData(true)" class="btn btn-primary btn-sm float-right">
+    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+  </button>
+  <button *ngIf="page != 1" type="button" (click)="loadUsersData(false)" class="btn btn-primary btn-sm float-left">
+    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+  </button>
+
+</div>
+
+<div class="col-12 card-columns">
+  <div *ngFor="let user of allUsers">
+    <bpu-user-card [UserData]="user"></bpu-user-card>
+  </div>
+</div>

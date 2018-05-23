@@ -1,0 +1,15 @@
+<div class="modal-header">
+  <h4 class="modal-title">Deleting {{selectedUser.first_name +' '+ selectedUser.last_name}}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p class=" h2 text-center text-danger"> Are you sure ?</p>
+</div>
+<div class="modal-footer d-flex justify-content-between ">
+  <button class="btn btn-danger px-4" (click)="deleteUser()">
+    <i class="fa fa-trash"></i> Delete this User</button>
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.dismiss('Close click')">Cancel</button>
+  <!-- <button class="btn btn-primary btn-lg" [ngClass]="{'disabled': !categoryForm.invalid}" (click)="saveCategory()">{{isEditMode?'Submit Changes':'Add New'}}</button> -->
+</div>

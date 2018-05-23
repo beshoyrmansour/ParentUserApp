@@ -1,3 +1,11 @@
-<p>
-  user-card works!
-</p>
+<div class="circle-card">
+  <div class="heading bg-primary">
+    <img [src]="UserData.avatar" alt="">
+  </div>
+  <div class="content bg-primary">
+    <p class="h1 text-white">{{UserData.first_name}}</p>
+    <div class="footer" (click)="goToUserDetails()">More Info
+      <i class="fa fa-chevron-circle-right"></i>
+    </div>
+  </div>
+</div>

@@ -4,16 +4,20 @@ import { HeaderComponent } from './header/header.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { DataApiService } from './services/data-api.service';
 import { HttpClientModule } from '@angular/common/http';
+import { UserDeleteComponent } from './user-delete/user-delete.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   imports: [
     CommonModule,
     NgbModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot()
+
   ],
-  declarations: [HeaderComponent],
+  declarations: [HeaderComponent, UserDeleteComponent],
   exports: [
-    HeaderComponent
+    HeaderComponent, UserDeleteComponent
   ],
   providers:[DataApiService]
 })

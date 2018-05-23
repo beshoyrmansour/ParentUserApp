@@ -13,9 +13,15 @@ import { UsersService } from './users.service';
 @NgModule({
   imports: [
     CommonModule,
-    UsersRoutingModule
+    UsersRoutingModule,
   ],
-  providers:[DataApiService, UsersService],
-  declarations: [UsersComponent, AllUsersComponent, UserControlComponent, UserCardComponent, UserDetailsComponent]
+  providers: [DataApiService, UsersService],
+  declarations: [
+    UsersComponent,
+    AllUsersComponent,
+    UserControlComponent,
+    UserCardComponent,
+    UserDetailsComponent,
+  ]
 })
 export class UsersModule { }
