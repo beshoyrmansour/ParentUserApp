@@ -15,7 +15,9 @@ const routes: Routes = [
       { path: config.user.allUsers.path, component: AllUsersComponent },
       { path: config.user.addUser.path, component: UserControlComponent },
       { path: config.user.editUser.path, component: UserControlComponent },
-      { path: config.user.viewUser.path, component: UserDetailsComponent }]
+      { path: config.user.viewUser.path, component: UserDetailsComponent },
+      { path:'**', redirectTo: config.auth.login.path, pathMatch:'full'}
+]
   }
 ];
 

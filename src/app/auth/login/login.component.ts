@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
 import { config } from '../../shared/consts/defines';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'bpu-login',
@@ -31,8 +31,8 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.value).subscribe(() => {
         if (localStorage.getItem('user')) {
-          /* ToDo navigate to HomeComp */
-          // this.router.navigate['']
+          this.authService.isLogedin = true;
+          this.router.navigate([config.user.allUsers.route])
         }
       })
     }

@@ -8,6 +8,7 @@ import { SharedModule } from './shared/shared.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { UserDeleteComponent } from './shared/user-delete/user-delete.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthUserGuard } from './shared/guards/auth-user.guard';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SharedModule,
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [AuthUserGuard],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
   entryComponents:[UserDeleteComponent]

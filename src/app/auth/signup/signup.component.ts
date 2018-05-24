@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
 import { config } from '../../shared/consts/defines';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../../shared/services/auth.service';
 @Component({
   selector: 'bpu-signup',
   templateUrl: './signup.component.html',
@@ -18,6 +18,7 @@ export class SignupComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    
     this.initRegisterForm()
   }
   initRegisterForm() {
@@ -30,14 +31,14 @@ export class SignupComponent implements OnInit {
     if (this.registerForm.valid) {
       this.authService.register(this.registerForm.value).subscribe(() => {
         if (localStorage.getItem('user')) {
-          /* ToDo navigate to HomeComp */
-          // this.router.navigate['']
+          this.authService.isLogedin = true;
+          this.router.navigate([config.user.allUsers.route])
         }
       })
     }
   }
   gotoLogIn() {
-    this.router.navigate([config.auth.signup.route])
+    this.router.navigate([config.auth.login.route])
   }
 
 }

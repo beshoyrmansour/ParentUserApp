@@ -19,7 +19,7 @@ export class AllUsersComponent implements OnInit {
     this.loadUsersData(true);
   }
 
-  loadUsersData(flag:boolean) {
+  loadUsersData(flag: boolean) {
     this.allUsers = new Array<User>();
     flag ? (this.page++) : (this.page--)
     this.usersService.listingUsers(this.page).subscribe(res => {
@@ -28,8 +28,8 @@ export class AllUsersComponent implements OnInit {
       this.total = res['total']
       this.total_pages = res['total_pages']
       this.allUsers = res['data'];
-      console.log(res);
-
+    }, (err) => {
+      console.error('loadUsersData', err);
     })
   }
 

@@ -7,11 +7,15 @@ import { constants } from '../shared/consts/defines';
 
 @Injectable()
 export class UsersService {
-
+  allUsers= new Array<User>();
   constructor(private dataApiService: DataApiService) { }
 
   listingUsers(pageNumber: number): Observable<Array<User>> {
-    return this.dataApiService.getData(API_ROUTES.LIST_USERS.replace('{pageNumber}', pageNumber.toString())).map(res => res)
+    this.allUsers= new Array<User>();
+    return this.dataApiService.getData(API_ROUTES.LIST_USERS.replace('{pageNumber}', pageNumber.toString())).map(res => {
+      this.allUsers = res['data'];
+      return res
+    })
   }
 
   getSingleUser(userId: number): Observable<User> {
@@ -26,8 +30,8 @@ export class UsersService {
     return this.dataApiService.delete(API_ROUTES.DELETE.replace('{userId}', userId.toString())).map(res => res)
   }
 
-  updateUser(userId: number): Observable<any> {
-    return this.dataApiService.getData(API_ROUTES.UPDATE.replace('{userId}', userId.toString())).map(res => res)
+  updateUser(userId: number, userData:User): Observable<any> {
+    return this.dataApiService.addOrUpdate(API_ROUTES.UPDATE.replace('{userId}', userId.toString()),userData, 'put').map(res => res)
   }
 
 }

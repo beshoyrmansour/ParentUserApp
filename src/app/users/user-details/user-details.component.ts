@@ -30,6 +30,9 @@ export class UserDetailsComponent implements OnInit {
     this.userId = +this.route.snapshot.paramMap.get('id');
     this.usersService.getSingleUser(this.userId).subscribe((res) => {
       this.selectedUser = res['data']
+    },(err)=>{
+      console.error('UserDetailsComponent', err);
+      this.router.navigate([config.user.allUsers.route]);
     })
   }
 

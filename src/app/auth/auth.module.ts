@@ -6,7 +6,8 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DataApiService } from '../shared/services/data-api.service';
-import { AuthService } from './auth.service';
+import { AuthService } from '../shared/services/auth.service';
+import { AuthUserGuard } from '../shared/guards/auth-user.guard';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { AuthService } from './auth.service';
     ReactiveFormsModule,
   ],
   declarations: [LoginComponent, SignupComponent],
-  providers: [AuthService, DataApiService]
+  providers: [AuthService, DataApiService, AuthUserGuard]
 })
 export class AuthModule { }

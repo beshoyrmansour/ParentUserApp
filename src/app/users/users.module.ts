@@ -9,11 +9,13 @@ import { UserCardComponent } from './user-card/user-card.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { DataApiService } from '../shared/services/data-api.service';
 import { UsersService } from './users.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     UsersRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [DataApiService, UsersService],
   declarations: [
