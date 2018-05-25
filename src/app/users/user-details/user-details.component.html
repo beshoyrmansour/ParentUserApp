@@ -1,25 +1,27 @@
-<div class="d-flex flex-row d-flex justify-content-between" *ngIf="selectedUser">
-  <div class="media">
-    <img class="align-self-center mr-3 rounded-circle border border-primary" [src]="selectedUser.avatar" alt="Generic placeholder image">
-    <div class="media-body">
-      <p class="lead">
-        <span class="text-info">First Name :</span>
-        <span> {{selectedUser.first_name}}</span>
-      </p>
-      <p class="lead">
-        <span class="text-info">Last Name :</span>
-        <span> {{selectedUser.last_name}} </span>
-      </p>
-      <p class="lead">
-        <span class="text-info">ID :</span>
-        <span> {{selectedUser.id}} </span>
-      </p>
+<div class="d-flex flex-md-row flex-column justify-content-between" *ngIf="selectedUser">
+  <div class="d-flex flex-row ">
+    <div class="media">
+      <img class="align-self-center mr-3 rounded-circle border border-primary" [src]="selectedUser.avatar" alt="Generic placeholder image">
+      <div class="media-body">
+        <p class="lead">
+          <span class="text-info">First Name :</span>
+          <span> {{selectedUser.first_name}}</span>
+        </p>
+        <p class="lead">
+          <span class="text-info">Last Name :</span>
+          <span> {{selectedUser.last_name}} </span>
+        </p>
+        <p class="lead">
+          <span class="text-info">ID :</span>
+          <span> {{selectedUser.id}} </span>
+        </p>
+      </div>
     </div>
   </div>
 
 
-  <div class="d-flex flex-column align-content-center">
-    <button class="btn btn-danger mb-4" (click)="openDeleteModal()">
+  <div class="d-flex flex-md-column flex-sm-row justify-content-between my-3">
+    <button class="btn btn-danger mb-md-4" (click)="openDeleteModal()">
       <i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
     <button class="btn btn-info" (click)="gotoEditUser()">
       <i class="fa fa-edit" aria-hidden="true"></i> Edit</button>

@@ -1,26 +1,7 @@
 <div class="d-flex justify-content-center h-100">
-  
-    <div class="card align-self-center text-center" >
-        <div class="card-img-top bg-primary p-4 text-white">
-            <h2>login</h2>
-            <i class="fa fa-lock fa-5x" aria-hidden="true"> </i>    
-
-        </div>
-        <div class="card-body">
-            <form [formGroup]="loginForm">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email" aria-describedby="emailHelp" placeholder="Enter email">
-                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" placeholder="Password">
-                </div>
-                <button type="submit" class="btn btn-primary btn-block" [disabled]="!loginForm.valid" (click)="login()">Submit</button>
-                <button type="submit" class="btn btn-link btn-block" (click)="gotoSignUp()">Register new Accout</button>
-              </form>
-        </div>
-      </div>
-
+  <div class="align-self-center text-center">
+      <i class="fa fa-lock fa-5x" aria-hidden="true"></i>
+      <p class="display-4 text-danger">Please Login</p>
+      <button type="submit" class="btn btn-link btn-block text-info" (click)="gotoSignUp()">Register new Accout</button>
+  </div>
 </div>

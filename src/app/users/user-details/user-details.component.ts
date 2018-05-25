@@ -30,7 +30,7 @@ export class UserDetailsComponent implements OnInit {
     this.userId = +this.route.snapshot.paramMap.get('id');
     this.usersService.getSingleUser(this.userId).subscribe((res) => {
       this.selectedUser = res['data']
-    },(err)=>{
+    }, (err) => {
       console.error('UserDetailsComponent', err);
       this.router.navigate([config.user.allUsers.route]);
     })
@@ -48,13 +48,15 @@ export class UserDetailsComponent implements OnInit {
   }
 
   deleteUser() {
-    return (()=>{this.usersService.deleteUser(+this.selectedUser.id).subscribe((res) => {
-      this.toastr.success( '👍 👍 👍', this.selectedUser.first_name+' deleted!');
-      this.router.navigate([config.user.allUsers.route]);
-      this.modalRef['close']();
-    },(err)=>{
-      this.toastr.error( '😱 😱 😱', 'something went wrong!');
+    return (() => {
+      this.usersService.deleteUser(+this.selectedUser.id).subscribe((res) => {
+        this.toastr.success('👍 👍 👍', this.selectedUser.first_name + ' deleted!');
+        this.router.navigate([config.user.allUsers.route]);
+        this.modalRef['close']();
+      }, (err) => {
+        this.toastr.error('😱 😱 😱', 'something went wrong!');
 
-    })})
+      })
+    })
   }
 }

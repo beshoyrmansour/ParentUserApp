@@ -1,40 +1,35 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand text-primary" href="#">
-    <img src="/assets/brand/parent_logo.png" height="30" class="d-inline-block align-top" alt=""> Users
+    <img src="/assets/brand/parent_logo.png" height="30" class="d-inline-block align-top" alt="">
+    <span class="lead">USERS</span>
   </a>
   <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="collapseExample" [ngbCollapse]="isCollapsed">
     <div class="navbar-nav flex-row ml-md-auto d-none d-flex">
-      <form class="form-inline" [formGroup]="loginForm"  *ngIf="showLogin">
+      <form class="form-inline" [formGroup]="loginForm" *ngIf="showLogin">
         <div class="form-group">
           <label for="exampleInputEmail1" class="col-form-label col-form-label-sm mr-1">Email address</label>
-          <input type="email" class="form-control  form-control-sm" id="exampleInputEmail1" formControlName="email" aria-describedby="emailHelp" placeholder="Enter email">
+          <input type="email" class="form-control  form-control-sm" id="exampleInputEmail1" formControlName="email" aria-describedby="emailHelp"
+            placeholder="Enter email">
         </div>
         <div class="form-group ml-3">
-          <label for="exampleInputPassword1"  class="col-form-label col-form-label-sm mr-1">Password</label>
+          <label for="exampleInputPassword1" class="col-form-label col-form-label-sm mr-1">Password</label>
           <input type="password" class="form-control  form-control-sm" id="exampleInputPassword1" formControlName="password" placeholder="Password">
         </div>
-        <button type="submit" class="btn btn-primary btn-sm px-3 ml-3" [disabled]="!loginForm.valid" (click)="login()"><span>log<strong>in</strong></span></button>
-      </form>
-      
-      
-      
-      <!-- <div class="navbar-nav" *ngIf="showLogin">
-        <button (click)="gotologIn()" class="btn btn-sm btn-outline-secondary mr-md-3" type="button">
+        <button type="submit" class="btn btn-primary btn-sm px-3 ml-3" [disabled]="!loginForm.valid" (click)="login()">
           <span>log<strong>in</strong></span>
         </button>
-        <button (click)="gotoSignUp()" class="btn btn-sm btn-outline-secondary" type="button">
-          <span>Sign<strong>Up</strong></span>
-        </button>
-      </div> -->
+      </form>
+
       <div *ngIf="showLogout">
+        <button (click)="gotoAllUsers()" class="btn btn-sm btn-link" type="button">All users</button>
         <button (click)="logout()" class="btn btn-sm btn-outline-secondary" type="button">
           <span>log<strong>out</strong></span>
         </button>
       </div>
     </div>
   </div>
-  
+
 </nav>
