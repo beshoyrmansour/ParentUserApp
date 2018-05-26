@@ -14,7 +14,7 @@ export class DataApiService {
     }
   }
 
-  delete(url, headers?: HttpHeaders): Observable<boolean> {
+  delete(url, headers?: HttpHeaders){
     if (url) {
       return this.http.delete(url, { headers: headers ? headers : {} }).map((res: any) =>  res );
     }

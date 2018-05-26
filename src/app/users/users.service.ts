@@ -10,7 +10,7 @@ export class UsersService {
   allUsers= new Array<User>();
   constructor(private dataApiService: DataApiService) { }
 
-  listingUsers(pageNumber: number): Observable<Array<User>> {
+  listingUsers(pageNumber: number): Observable<Array<any>> {
     this.allUsers= new Array<User>();
     return this.dataApiService.getData(API_ROUTES.LIST_USERS.replace('{pageNumber}', pageNumber.toString())).map(res => {
       this.allUsers = res['data'];
@@ -19,10 +19,12 @@ export class UsersService {
   }
 
   getSingleUser(userId: number): Observable<User> {
-    return this.dataApiService.getData(API_ROUTES.SINGLE_USER.replace('{userId}', userId.toString())).map(res => res)
+    return this.dataApiService.getData(API_ROUTES.SINGLE_USER.replace('{userId}', userId.toString())).map(res => {
+      return res
+    })
   }
 
-  createUser(user: User): Observable<User> {
+  createUser(user: User) {
     return this.dataApiService.addOrUpdate(API_ROUTES.CREATE, user, 'post').map(res => res)
   }
 
