@@ -7,7 +7,7 @@ import { mockUsersData } from '../mocks/data/mock-users-data';
 import { API_ROUTES } from '../shared/consts/api-routes';
 import { Observable } from 'rxjs/Observable';
 
-fdescribe('UsersService', () => {
+describe('UsersService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [UsersService,

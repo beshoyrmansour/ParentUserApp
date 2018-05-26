@@ -32,15 +32,13 @@ export class UserControlComponent implements OnInit {
       this.selectedUser = this.usersService.allUsers.filter((user) => {
         return this.userId == user.id
       })[0]
-      console.log('this.selectedUser', this.selectedUser);
-
       if (!this.selectedUser) {
         this.usersService.getSingleUser(this.userId).subscribe(res => {
-          console.log(res['data']);
           this.selectedUser = res['data']
           this.initUserForm();
         }, () => {
           this.toastr.error('something went wrong!', 'invalid user Id!');
+          this.router.navigate([config.user.allUsers.route]);
         })
       }
     }

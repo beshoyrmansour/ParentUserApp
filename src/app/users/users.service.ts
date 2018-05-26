@@ -32,7 +32,7 @@ export class UsersService {
     return this.dataApiService.delete(API_ROUTES.DELETE.replace('{userId}', userId.toString())).map(res => res)
   }
 
-  updateUser(userId: number, userData:User): Observable<any> {
+    updateUser(userId: number, userData:User): Observable<any> {
     return this.dataApiService.addOrUpdate(API_ROUTES.UPDATE.replace('{userId}', userId.toString()),userData, 'put').map(res => res)
   }
 
